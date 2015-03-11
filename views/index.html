@@ -12,10 +12,25 @@
       100 followers
     </div>
     <div class="col-md-9">
-    
+      <h3><b>All Tweets</b></h3>
       <!-- display tweets here -->
       {% for tweet in tweets %}
-        <li>{{tweet.text}}</li>
+        <li class="tweetLI"><!-- img, name, tweet.txt, link to retweet -->
+	        <p class="tweetDiv">
+	        	<div class="tweetPic">
+	 				<img src="http://www.thinkupthemes.com/wp-content/themes/alante/images/icons/color/Person-black.png">
+	 			</div>
+	 			<div class="tweetName">
+	 				{{tweet.name}}
+	 			</div>
+	 			<div class="tweetText">
+	 				{{tweet.text}}
+	 			</div>
+	 			<div class="re-tweet">
+	 				<a href="#">Re-tweet</a>
+	 			</div>
+ 			</p>
+ 		</li>
       {% endfor %}
       
     </div>

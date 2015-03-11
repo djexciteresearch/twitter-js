@@ -57,3 +57,29 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+.tweetDIV {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.tweetLI {
+	list-style-type: none;
+}
+
+.tweetPic {
+	float: left;
+}
+
+.tweetName {
+	font-weight: bold;
+}
+
+.tweetText {
+
+}
+
+.re-tweet {
+	
+}
+
