@@ -1,6 +1,7 @@
 var express = require( 'express' );
 var app = express();
 var morgan = require('morgan');
+var swig = require('swig');
 var server = app.listen( 3000 , function(){
 	var host = server.address().address;
 	var port = server.address().port;
@@ -11,18 +12,23 @@ var server = app.listen( 3000 , function(){
 
 
 app.use( morgan('dev') );
+app.engine("html", swig.renderFile);
 
+app.set("view engine", 'html');
+app.set('views',__dirname + "/" + "views");
 //app.use("/",function(req, res, next){
 //	res.send("Welcome");
 //	next();
 //});
+swig.setDefaults({ cache: false });
 
-app.get("/",function(req, res, next){
-	res.send("Welcome");
-	next();
+var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+
+//app.get("/",function(req, res, next){
+//	res.send("Welcome");
+//	next();
+//});
+app.get("/",function(req, res){
+	res.render( 'index', {title: 'Hall of Fame', people: people} );
 });
 
-app.get("/news",function(req, res, next){
-	res.send("This is the News");
-	next();
-});
