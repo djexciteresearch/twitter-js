@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var data = []; //Add a data array to the store
 				//module (as a variable, not an export). 
 				//This will store the tweets.
