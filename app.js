@@ -12,6 +12,17 @@ var server = app.listen( 3000 , function(){
 
 app.use( morgan('dev') );
 
-app.get("/",function(req, res){
+//app.use("/",function(req, res, next){
+//	res.send("Welcome");
+//	next();
+//});
+
+app.get("/",function(req, res, next){
 	res.send("Welcome");
+	next();
+});
+
+app.get("/news",function(req, res, next){
+	res.send("This is the News");
+	next();
 });
